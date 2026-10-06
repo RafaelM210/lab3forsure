@@ -28,7 +28,7 @@ ARunnerCharacter::ARunnerCharacter()
     Movement->JumpZVelocity=230.f;
     Movement->GravityScale=1.f;
     Movement->AirControl=0.35f;
-    JumpMaxHoldTime=3.0f; // LAB 1: choose a deliberate nonzero hold interval.
+    JumpMaxHoldTime=1.0f; // LAB 1: choose a deliberate nonzero hold interval.
     static ConstructorHelpers::FObjectFinder<UPaperFlipbook> Idle(TEXT("/Game/Course/Characters/FB_PlayerIdle"));
     static ConstructorHelpers::FObjectFinder<UPaperFlipbook> Run(TEXT("/Game/Course/Characters/FB_PlayerRun"));
     IdleAnimation=Idle.Object; RunAnimation=Run.Object;
