@@ -75,8 +75,26 @@ bool ARunnerCharacter::ProbeFloor()
     // LAB 3: implement a diagnostic downward floor query here.
     // Record origin, direction, length and channel. Draw it when bShowFloorProbe is true.
     // Keep CharacterMovement responsible for grounding.
-    bFloorProbeHit=false;
-    return false;
+    FVector Origin = GetActorLocation();
+    FVector Direction = FVector(0, 0, -1);
+    float Length = 40.f;
+
+    FVector End = Origin + (Direction * Length);
+
+    FHitResult Hit;
+    FCollisionQueryParams Params;
+    Params.AddIgnoredActor(this);
+
+    bool bHit = GetWorld()->LineTraceSingleByChannel(Hit,Origin,End,ECC_Visibility,Params);
+
+    bFloorProbeHit = bHit;
+
+    if (bShowFloorProbe)
+    {
+        DrawDebugLine(GetWorld(),Origin,End,bHit ? FColor::Green : FColor::Red,false,0.f,0,2.f);
+    }
+
+    return bHit;
 }
 void ARunnerCharacter::Tick(float DeltaSeconds)
 {
