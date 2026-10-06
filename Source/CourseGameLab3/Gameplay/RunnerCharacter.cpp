@@ -28,7 +28,7 @@ ARunnerCharacter::ARunnerCharacter()
     Movement->JumpZVelocity=230.f;
     Movement->GravityScale=1.f;
     Movement->AirControl=0.35f;
-    JumpMaxHoldTime=0.f; // LAB 1: choose a deliberate nonzero hold interval.
+    JumpMaxHoldTime=0.15f; // LAB 1: choose a deliberate nonzero hold interval.
     static ConstructorHelpers::FObjectFinder<UPaperFlipbook> Idle(TEXT("/Game/Course/Characters/FB_PlayerIdle"));
     static ConstructorHelpers::FObjectFinder<UPaperFlipbook> Run(TEXT("/Game/Course/Characters/FB_PlayerRun"));
     IdleAnimation=Idle.Object; RunAnimation=Run.Object;
@@ -43,6 +43,8 @@ void ARunnerCharacter::SetupPlayerInputComponent(UInputComponent* Input)
     Enhanced->BindAction(MoveAction,ETriggerEvent::Completed,this,&ARunnerCharacter::ReleaseMove);
     Enhanced->BindAction(MoveAction,ETriggerEvent::Canceled,this,&ARunnerCharacter::ReleaseMove);
     Enhanced->BindAction(JumpAction,ETriggerEvent::Started,this,&ARunnerCharacter::BeginJump);
+    Enhanced->BindAction(JumpAction, ETriggerEvent::Completed, this, &ARunnerCharacter::EndJump);
+    Enhanced->BindAction(JumpAction, ETriggerEvent::Canceled, this, &ARunnerCharacter::EndJump);
     // LAB 1: bind both Completed and Canceled to your jump-release handler.
 }
 void ARunnerCharacter::ApplyMoveIntent(float Value)
@@ -59,6 +61,7 @@ void ARunnerCharacter::ReleaseMove(const FInputActionValue&) { ConsumeMovementIn
 void ARunnerCharacter::BeginJump() { if (bGameplayEnabled) Jump(); }
 void ARunnerCharacter::EndJump()
 {
+    StopJumping();
     // LAB 1: stop continued jump force when input is released or canceled.
 }
 void ARunnerCharacter::SetGameplayEnabled(bool bEnabled)
