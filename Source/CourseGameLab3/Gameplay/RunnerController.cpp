@@ -63,6 +63,27 @@ void ARunnerController::OnUnPossess()
 void ARunnerController::EndPlay(const EEndPlayReason::Type Reason) { RemoveInputContext(); Super::EndPlay(Reason); }
 void ARunnerController::ToggleMenu()
 {
+    bMenuOpen = !bMenuOpen;
+
+    if (auto* Runner = Cast<ARunnerCharacter>(GetPawn()))
+    {
+        if (bMenuOpen)
+        {
+            RemoveInputContext();
+            Runner->SetGameplayEnabled(false);
+
+            bShowMouseCursor = true;
+            SetInputMode(FInputModeGameAndUI());
+        }
+        else
+        {
+            bShowMouseCursor = false;
+            SetInputMode(FInputModeGameOnly());
+
+            Runner->SetGameplayEnabled(true);
+            RefreshInputContext();
+        }
+    }
     // LAB 2: transfer control to/from the menu using bMenuOpen.
     // Update context lifetime, clear held input, gate the pawn, and set cursor/input mode.
     // The HUD panel and Tab shortcut are supplied. Do not pause the world.
