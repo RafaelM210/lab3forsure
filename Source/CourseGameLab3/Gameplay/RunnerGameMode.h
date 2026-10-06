@@ -3,7 +3,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "RunnerGameMode.generated.h"
 UCLASS()
-class COURSEGAME_API ARunnerGameMode : public AGameModeBase
+class COURSEGAMELAB3_API ARunnerGameMode : public AGameModeBase
 {
     GENERATED_BODY()
 public: ARunnerGameMode();

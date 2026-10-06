@@ -4,7 +4,7 @@
 #include "RunnerController.generated.h"
 class UInputMappingContext;
 UCLASS()
-class COURSEGAME_API ARunnerController : public APlayerController
+class COURSEGAMELAB3_API ARunnerController : public APlayerController
 {
     GENERATED_BODY()
 public:

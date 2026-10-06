@@ -5,7 +5,7 @@
 class USphereComponent;
 class UStaticMeshComponent;
 UCLASS()
-class COURSEGAME_API ARunnerPickup : public AActor
+class COURSEGAMELAB3_API ARunnerPickup : public AActor
 {
     GENERATED_BODY()
 public: ARunnerPickup();

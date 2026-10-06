@@ -1,5 +1,5 @@
 #include "Gameplay/ConfigurablePickup.h"
-#include "CourseGame.h"
+#include "CourseGameLab3.h"
 #include "Components/StaticMeshComponent.h"
 #include "Engine/StaticMesh.h"
 #include "UObject/ConstructorHelpers.h"
@@ -16,7 +16,7 @@ bool AConfigurablePickup::ValidateConfiguration() const
 {
     if (ScoreValue <= 0)
     {
-        UE_LOG(LogCourseGame, Error, TEXT("%s: ScoreValue must be positive; got %d. Pickup rejected."), *GetPathName(), ScoreValue);
+        UE_LOG(LogCourseGameLab3, Error, TEXT("%s: ScoreValue must be positive; got %d. Pickup rejected."), *GetPathName(), ScoreValue);
         return false;
     }
     return true;
@@ -29,5 +29,5 @@ void AConfigurablePickup::BeginPlay()
         SetActorEnableCollision(false);
         return;
     }
-    UE_LOG(LogCourseGame, Display, TEXT("%s: configured score %d"), *GetName(), ScoreValue);
+    UE_LOG(LogCourseGameLab3, Display, TEXT("%s: configured score %d"), *GetName(), ScoreValue);
 }

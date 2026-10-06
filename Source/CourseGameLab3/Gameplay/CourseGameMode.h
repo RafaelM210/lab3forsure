@@ -3,7 +3,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "CourseGameMode.generated.h"
 UCLASS()
-class COURSEGAME_API ACourseGameMode : public AGameModeBase
+class COURSEGAMELAB3_API ACourseGameMode : public AGameModeBase
 {
     GENERATED_BODY()
 public:

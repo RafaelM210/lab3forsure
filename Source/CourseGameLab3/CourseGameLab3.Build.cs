@@ -1,7 +1,7 @@
 using UnrealBuildTool;
-public class CourseGame : ModuleRules
+public class CourseGameLab3 : ModuleRules
 {
-    public CourseGame(ReadOnlyTargetRules Target) : base(Target)
+    public CourseGameLab3(ReadOnlyTargetRules Target) : base(Target)
     {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         PublicIncludePaths.Add(ModuleDirectory);

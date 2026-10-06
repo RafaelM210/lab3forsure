@@ -5,7 +5,7 @@
 class UInputMappingContext;
 class UInputAction;
 UCLASS()
-class COURSEGAMEEDITOR_API UWeek03AssetLibrary : public UBlueprintFunctionLibrary
+class COURSEGAMELAB3EDITOR_API UWeek03AssetLibrary : public UBlueprintFunctionLibrary
 {
     GENERATED_BODY()
 public:

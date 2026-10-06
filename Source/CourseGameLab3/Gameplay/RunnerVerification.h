@@ -3,7 +3,7 @@
 #include "GameFramework/Actor.h"
 #include "RunnerVerification.generated.h"
 UCLASS()
-class COURSEGAME_API ARunnerVerification : public AActor
+class COURSEGAMELAB3_API ARunnerVerification : public AActor
 {
  GENERATED_BODY()
 public:

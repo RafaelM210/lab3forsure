@@ -31,12 +31,12 @@
   "Modules": [
     {
       "Type": "Runtime",
-      "Name": "CourseGame",
+      "Name": "CourseGameLab3",
       "LoadingPhase": "Default"
     },
     {
       "Type": "Editor",
-      "Name": "CourseGameEditor",
+      "Name": "CourseGameLab3Editor",
       "LoadingPhase": "Default"
     }
   ],

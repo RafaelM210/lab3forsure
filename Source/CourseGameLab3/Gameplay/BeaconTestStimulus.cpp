@@ -1,6 +1,6 @@
 #include "Gameplay/BeaconTestStimulus.h"
 #include "Gameplay/CourseBeacon.h"
-#include "CourseGame.h"
+#include "CourseGameLab3.h"
 #include "EngineUtils.h"
 #include "Engine/World.h"
 #include "TimerManager.h"
@@ -20,7 +20,7 @@ void ABeaconTestStimulus::RunChecks()
         const bool bNegativeIgnored = It->GetCharge() == Before;
         It->AddCharge(125.f);
         const bool bClamped = It->GetCharge() == 100.f;
-        UE_LOG(LogCourseGame, Display, TEXT("M01 %s: negative=%s oversized=%s charge=%.2f"),
+        UE_LOG(LogCourseGameLab3, Display, TEXT("M01 %s: negative=%s oversized=%s charge=%.2f"),
             *It->GetName(), bNegativeIgnored ? TEXT("PASS") : TEXT("FAIL"),
             bClamped ? TEXT("PASS") : TEXT("FAIL"), It->GetCharge());
     }

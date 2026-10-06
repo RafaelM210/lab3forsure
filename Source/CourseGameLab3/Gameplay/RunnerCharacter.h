@@ -7,7 +7,7 @@ class UInputAction;
 class UInputMappingContext;
 class UPaperFlipbook;
 UCLASS(Blueprintable)
-class COURSEGAME_API ARunnerCharacter : public APaperCharacter
+class COURSEGAMELAB3_API ARunnerCharacter : public APaperCharacter
 {
     GENERATED_BODY()
 public:

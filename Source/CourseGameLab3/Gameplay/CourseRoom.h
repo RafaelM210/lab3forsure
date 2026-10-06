@@ -6,7 +6,7 @@ class UBoxComponent;
 class UPaperSprite;
 class UPaperSpriteComponent;
 UCLASS(Blueprintable)
-class COURSEGAME_API ACourseRoom : public AActor
+class COURSEGAMELAB3_API ACourseRoom : public AActor
 {
     GENERATED_BODY()
 public:

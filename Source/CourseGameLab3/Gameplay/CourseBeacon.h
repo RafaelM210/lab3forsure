@@ -5,7 +5,7 @@
 class UStaticMeshComponent;
 class UMaterialInterface;
 UCLASS(Blueprintable)
-class COURSEGAME_API ACourseBeacon : public AActor
+class COURSEGAMELAB3_API ACourseBeacon : public AActor
 {
     GENERATED_BODY()
 public:

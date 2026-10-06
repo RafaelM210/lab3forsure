@@ -4,7 +4,7 @@
 #include "ConfigurablePickup.generated.h"
 class UStaticMeshComponent;
 UCLASS(Blueprintable)
-class COURSEGAME_API AConfigurablePickup : public AActor
+class COURSEGAMELAB3_API AConfigurablePickup : public AActor
 {
     GENERATED_BODY()
 public:
